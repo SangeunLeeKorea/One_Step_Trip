@@ -1,12 +1,12 @@
-1. To prevent CORS error from occuring, main page(index.html) is only implementable when server is connected with this website.
+1. To prevent CORS error from occurring, main page(index.html) is only implantable when server is connected with this website.
 
-2. In the case of country information pages, it is only available to access one country for each continents.
-Implementable Country List
-North America - U.S.A.
-South America - Brazil
-Africa - Madagascar
-Europe - France
-Asia - South Korea
-Oceania - Australia
+2. In the case of country information pages, it is only available to reach one country for each continents.
+Implantable Country List
+- North America: U.S.A.
+- South America: Brazil
+- Africa: Madagascar
+- Europe: France
+- Asia: South Korea
+- Oceania: Australia
 
 3. Participation field: Design(logo, elements deployment, color and fonts), Plugin develop(in country information page, fade in event occurs when scrolls down), Main page, Instruction page, Data survey

@@ -1,0 +1,14 @@
+1. 메인 페이지의 세계지도의 경우 서버가 연결되어있는 상태에서만 제대로 작동이 가능합니다. 이는 CORS 오류가 발생하지 않게 하기 위함입니다.
+
+2. 나라의 경우 하나의 대륙 당 하나의 국가만이 제작되어 있습니다.
+실행 가능 나라 리스트
+North America - U.S.A.
+South America - Brazil
+Africa - Madagascar
+Europe - France
+Asia - South Korea
+Oceania - Australia
+
+3. "One Step Trip Demonstration Video.mp4"는 해당 웹사이트의 시연 영상입니다.
+
+4. 제작 및 참여 분야: 디자인(로고, 요소 배치, 색상 및 폰트 등), 플러그인 제작(각 나라별 설명 페이지의 관광지 설명 부분, 스크롤 시 해당 설명이 페이드인), 메인 페이지, 웹사이트 소개 페이지, 자료 조사

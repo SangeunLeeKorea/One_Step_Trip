@@ -39,6 +39,7 @@
 					<canvas id="continent-canvas" width="720" height="720"></canvas>
 					<script>
 						// canvas를 그리는데 필요한 변수들
+						// used while drawing canvas
 						const pin_src = "http://onesteptrip.dothome.co.kr/img/continent/pin1.png";
 						const pin_selected_src = "http://onesteptrip.dothome.co.kr/img/continent/pin2.png";
 						const pin_selected_sub_src = "http://onesteptrip.dothome.co.kr/img/continent/pin3.png";
@@ -54,13 +55,17 @@
 						
 						// pin_position: 나라 목록을 담고 있는 배열
 						// [ 나라 이름( 한글 ), x좌표, y좌표, 나라 이름( 영어이자 ID ), 간단 설명 title, 간단 설명 내용 ]
+						// pin_position: array containing list of countries
+						// [ country name(in Korean), x, y, country name(in English, used as ID), simple explanation title, simple explanation body]
 						var pin_position = <?= $json ?>;
 						
 						// 실제 캔버스에 값이 그려지는 부분
+						// drawing values in actual canvas
 						var canvas = document.getElementById( "continent-canvas" );
 						var context = canvas.getContext( "2d" );
 						
 						/* pin 세팅 */
+						// setting pins
 						var pin = new Image();
 						pin.src = pin_src;
 						pin.onload = function(){
@@ -70,6 +75,7 @@
 						}
 						
 						/* pin click 효과 */
+						// pin click effect
 						canvas.addEventListener( "click", function( e ) {
 							for( var i = 0; i < pin_position.length; i++ ){
 								var maxX = translate_pos( pin_position[i]["xpos"] + 20, 1, canvas );
@@ -88,13 +94,16 @@
 						});
 						
 						/* pin hover 효과 */
+						//pin hover effect
 						// 선택되었을 경우의 핀
+						// if selected
 						var selected_pin = new Image();
 						var sub_pin = new Image();
 						selected_pin.src = pin_selected_src;
 						sub_pin.src = pin_selected_sub_src;
 
 						// 마우스 이벤트 적용
+						// applying mouse event
 						canvas.addEventListener( "mousemove", function( e ) {
 							retranslate( e.clientX, e.clientY, canvas );
 							for( var i = 0; i < pin_position.length; i++ ){

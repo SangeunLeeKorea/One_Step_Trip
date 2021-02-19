@@ -1,0 +1,116 @@
+
+#title {
+    width: 96px;
+    height: 30px;
+}		
+#wrap{
+   width:80%;
+	padding-top: 20px;
+	margin:0 auto;
+	text-align:left;
+}           
+.slide-img{
+	width: 100%;
+	height: 60vh;
+	margin:0 auto;
+}
+.slide{
+	margin: 0 auto;
+	position:relative;
+	width: 100%;
+}
+h1{
+	font-size: 50px;
+}
+#firstdiv{
+	text-align:center;
+	width:100%;
+}
+.firstinfo_content{
+	width:100%;
+	text-align:center;
+}
+
+#infocountry{
+	font-family: 고양일산_R;
+	text-align:center;
+	font-size:22px;
+}
+#welcome{
+	font-family: 경기천년바탕_B;
+	text-align:center;
+	font-size:60px;
+	
+}
+
+#details{
+	font-family: 고양일산_R;
+}
+h3{
+	font-family: 경기천년바탕_B;
+}
+#article2{
+	padding-bottom:20px;
+}
+footer{
+	clear:both;
+	font-size: 12px;
+	font-weight: lighter;
+	margin-left: 20px;
+	margin-bottom:30px;
+}
+.country-name-in-slide {
+	position: absolute; 
+	font-size: 3em;
+	font-weight: bold;
+	text-align: center;
+	background-color: #ffffff;
+	opacity: 0.7;
+	width: 40%;
+	left: 30%;
+	right: 30%;
+	top: 30%;
+	bottom: 30%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: KBIZ한마음고딕_H;
+}
+
+.information_content {
+	float:left;
+	width:70%;
+	padding:0 10px;
+}
+.information_image {
+	float:left;
+	width:26%;
+}
+.information_img {
+	width: 100%;
+	height: 180px;
+}
+.information_div {
+	display: flex;
+	float: left;
+	margin-bottom: 50px;
+}
+#map{
+    width: 100%;
+    height: 60vh;
+}
+
+@font-face{
+	font-family: "KBIZ한마음고딕_H";
+	src: url(../fonts/KBIZ_H.ttf) format('truetype');
+}
+
+@font-face{
+	font-family: "경기천년바탕_B";
+	src: url(../fonts/GyeonggiBatang_B.ttf) format('truetype');
+}
+
+@font-face{
+	font-family: "고양일산_R";
+	src: url(../fonts/Goyang_R.TTF) format('truetype');
+}

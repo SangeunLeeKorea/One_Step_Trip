@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="icon" type="images/png" href="../icon/bicon.png" />
+    <title>One Step</title>
+    <link href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/titlebar.css">
+    <link rel="stylesheet" type="text/css" href="../css/country_css.css">
+
+    <script src="../script/jquery-3.5.1.js"></script>
+    <script src="../script/jquery.bxslider.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7E5d-TK5DZ4yeObXLfwNv2-hvATE10H0&callback=initMap"></script>
+
+
+    <!--지도 표시하기-->
+    <script type="text/javascript">
+        function initMap() {
+            var locations = [
+
+                ['바오밥 에비뉴', -20.21797698383271, 44.52673092727671],
+                ['베마라하 칭기 국립공원', -18.90861078367274, 44.772613467979475],
+                ['안치라베', -19.834142833687977, 47.06560070443572],
+                ['Queens palace', -18.910362787259036, 47.554389086822184],
+                ['이살로 국립 공원(Parc National de Isalo)', -22.4656138851598, 45.26172798211638]
+             ];
+
+
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 7,
+                center: new google.maps.LatLng(-21.152394015647612, 46.25639304372526),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+
+            });
+
+            var infowindow = new google.maps.InfoWindow();
+            var marker, i;
+            for (i = 0; i < locations.length; i++) {
+                marker = new google.maps.Marker({
+                    id: i,
+                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                    map: map
+
+                });
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent(locations[i][0]);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+                if (marker) {
+                    marker.addListener('click', function () {
+                        map.setZoom(13);
+                        map.setCenter(this.getPosition());
+                    });
+                }
+            }
+        }
+    </script>
+
+    <style>
+    </style>
+    <script>
+        $(function () {
+            $('.slide').bxSlider({
+                auto: true,
+                autoHover: true,
+                autoControls: false,
+                autoMover: true,
+                pager: false,
+                mode: 'fade',
+                slideWidth: 1600,
+                pause: 3000
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+        <a class="navbar-brand title-logo" id="title" href="http://onesteptrip.dothome.co.kr">
+            <img src="../icon/logo.png" width="96" height="30" alt="" loading="lazy">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link menu" href="http://onesteptrip.dothome.co.kr"> Home </a>
+                <a class="nav-link menu" href="http://onesteptrip.dothome.co.kr/introduction.html"> Introduce </a>
+                <a class="nav-link menu" href="http://onesteptrip.dothome.co.kr/allcontent.php"> Continents </a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="wrap">
+        <!--bxSlider-->
+        <div class="slide">
+            <div>
+                <p class="country-name-in-slide"> 마다가스카르 </p>
+                <img class="slide-img" src="../img/countries/Madagascar/mimage.jpg" alt="사진1">
+            </div>
+            <div>
+                <p class="country-name-in-slide"> 마다가스카르 </p>
+                <img class="slide-img" src="../img/countries/Madagascar/mimage3.jpg" alt="사진2">
+            </div>
+            <div>
+                <p class="country-name-in-slide"> 마다가스카르 </p>
+                <img class="slide-img" src="../img/countries/Madagascar/mimage4.jpg" alt="사진3">
+            </div>
+        </div>
+        <!--나라 소개-->
+		 <div class="information_div" id="firstdiv">
+            <div id="content1" class="firstinfo_content" >
+                <h3 id="welcome"> Welcome To Madagascar! </h3>
+                <p id="infocountry">
+                   아프리카 남동부에 위치한 섬나라고 세계에서 4번째로 큰 섬이다.<br>
+				   마다가스카르의 삼림은 엄청난 숫자의 초목이 모여 바람에 흔들리며 솟아오르고, 나뭇잎들이 뚝뚝 떨어지고<br>
+				   자연의 혜택을 받은 영리한 짐승들이 나뭇가지에 뛰어 오르고 미끄러지면서 살아가는 곳이다.<br>
+				   마다가스카르에 방문하여 한번도 경험해보지 못한 자연을 느껴보세요! 
+                </p>
+            </div>
+            
+        </div>
+
+        <div class="information_div">
+            <div id="content1" class="information_content">
+                <h3> 모론다바 바오밥 에비뉴 </h3>
+                <p id="details">
+						모돈다바 시내에서 15km 정도 가면 바오밥 에비뉴가 나온다. 아프리카 식물의 상징이나 소설 어린왕자에도 나온 적이 있다.<br>
+						마치 뿌리가 위로 자라는 것 같은 모양의 이 나무는 악마가 뿌리를 뽑아 거꾸로 심었다는 
+						전설이 전해 내려오기도 한다. 모론다바 바로밥 에비뉴의 바오밥 나무 중에서는 2,000살이 넘은
+						나무도 있다고 한다. 황혼이 지는 시간의 바오밥 에비뉴는 환상적으로 아름다워서 이 풍경을 잊지 못해
+						마다가스카르를 다시 찾는 분들이 많다고 전해진다. 30m 가 넘게 자라는 거대한 나무를 올려다보면 자연의 위대함을
+						온몸으로 만끽할 수 있습니다.
+                </p>
+            </div>
+            <div id="content2" class="information_image">
+                <img src="../img/countries/Madagascar/mimage5.jpg" class="information_img">
+            </div>
+        </div>
+
+        <!--관광지 소개-->
+        <div class="information_div">
+            <div id="content2" class="information_image">
+                <img src="../img/countries/Madagascar/마다가스카르2.PNG" class="information_img">
+            </div>
+            <div class="information_content">
+                <h3>베마라하 칭기 국립공원</h3>
+                <p id="details">
+                   칭기 국립공원에는 석회암 재질의 바위와 탑들이 날카롭게 뻗어있다.<br>
+                        그랑칭기 국립공원은 세계자연유산으로 등재되었으며 마다가스카르 중서부 해안지대에
+                        남북으로 약 400여 km에 걸쳐 베마라하 대륙판이 있는데 그곳에 이 국립공원이 있다.
+                        국립공원에 가기 위해서는 비포장 도로를 오래 달려야하며, 암벽을 등반하여야 한다.
+                        하지만 비교할 수 없이 아름다운 대자연이 만든 장엄한 풍경을 감상해볼 수 있다.
+                </p>
+            </div>
+        </div>
+
+        <!--관광지 소개-->
+        <div class="information_div">
+            <div class="information_content">
+                <h3>안치라베</h3>
+                <p id="details">
+                   '소금이 많은 곳' 이라는 뜻의 이름을 가진 교통의 요충지 안치라베, 마다가스카르의 으뜸가는
+				   휴양지인 안치라베는 19세기에 발견된 열탕, 온천이 있어 물의 도시, 온천도시라고도 불린다.<br>
+				   프랑스 식민지였던 탓에 그 당시 지어진 건물이 많고 서구식 식당과 음식을 맛볼 수 있는 곳이다.
+				   또 얇은 옷을 입은 채 맨발로 달리는 인력거꾼들도 만날 수 있다.
+                </p>
+            </div>
+
+            <div id="content2" class="information_image">
+                <img src="../img/countries/Madagascar/mimage6.jpg" class="information_img">
+            </div>
+        </div>
+        <!--지도-->
+        <div id="map" class="information_div">
+        </div>
+    </div>
+
+    <footer>
+        <p>One step: programmer 류채현 programmer 이상은 programmer 임성제</p>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            $(".information_div").ready(function () {
+                var showed = new Array();
+                var details = $(".information_div");
+                var locations = new Array();
+                details.each(function (index, item) {
+                    showed.push(false);
+                    locations.push($(details[index]).offset().top);
+                    $(details).css({ opacity: "0" });
+                });
+
+                makeVisible();
+                $(window).on('scroll', makeVisible);
+
+                function makeVisible() {
+                    for (var i = 0; i < details.length; i++) {
+                        if (checkVisible(details, i) && !showed[i]) {
+                            showed[i] = true;
+                            $(details[i]).animate({ opacity: 1 }, 700);
+                        }
+                    }
+                }
+
+                function checkVisible(details, i) {
+                    var windowH = $(window).innerHeight(),
+                        scrolltop = $(window).scrollTop(),
+                        y = locations[i],
+                        detH = $(details[i]).height;
+                    return (y <= (windowH + scrolltop) || y + detH >= scrolltop);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

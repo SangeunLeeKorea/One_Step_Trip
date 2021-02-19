@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+    <link rel="icon" type="images/png" href="../icon/bicon.png" />
+    <title>One Step</title>
+    <link href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/titlebar.css">
+    <link rel="stylesheet" type="text/css" href="../css/country_css.css">
+
+    <script src="../script/jquery-3.5.1.js"></script>
+    <script src="../script/jquery.bxslider.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7E5d-TK5DZ4yeObXLfwNv2-hvATE10H0&callback=initMap"></script>
+
+
+    <!--지도 표시하기-->
+    <script type="text/javascript">
+        function initMap() {
+            var locations = [
+
+                ['에펠탑', 48.858261, 2.294499],
+                ['샹보르 성', 47.616277856203624, 1.5176256940563642],
+                ['몽생미셸 섬', 48.63851960518019, -1.5093196754003546],
+                ['루브르 박물관', 48.86077342285708, 2.3384272033824223],
+                ['베르사유 궁전', 48.80540160335171, 2.1219432384628534],
+                ['오르세 미술관', 48.860053139952164, 2.327044195957122],
+                ['몽마르뜨 언덕', 48.890505765143565, 2.328886491987975],
+                ['개선문', 43.61164062114813, 3.873625497488467],
+                ['마르세유 대성당', 43.30007826888634, 5.365619416636865],
+                ['사크레쾨르 대성당', 48.886859783584775, 2.34412353769991],
+                ['지베리니 모네의 집', 49.078101660442, 1.5400708321099863],
+                ['노트르담 대성당', 48.853109369193284, 2.350427811303365]
+            ];
+
+
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 9,
+                center: new google.maps.LatLng(48.856697, 2.351462),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+
+            });
+
+            var infowindow = new google.maps.InfoWindow();
+            var marker, i;
+            for (i = 0; i < locations.length; i++) {
+                marker = new google.maps.Marker({
+                    id: i,
+                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                    map: map
+
+                });
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent(locations[i][0]);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+                if (marker) {
+                    marker.addListener('click', function () {
+                        map.setZoom(13);
+                        map.setCenter(this.getPosition());
+                    });
+                }
+            }
+        }
+    </script>
+
+    <style>
+    </style>
+    <script>
+        $(function () {
+            $('.slide').bxSlider({
+                auto: true,
+                autoHover: true,
+                autoControls: false,
+                autoMover: true,
+                pager: false,
+                mode: 'fade',
+                slideWidth: 1600,
+                pause: 3000
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+        <a class="navbar-brand title-logo" id="title" href="http://onesteptrip.dothome.co.kr">
+            <img src="../icon/logo.png" width="96" height="30" alt="" loading="lazy">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link menu" href="http://onesteptrip.dothome.co.kr"> Home </a>
+                <a class="nav-link menu" href="http://onesteptrip.dothome.co.kr/introduction.html"> Introduce </a>
+                <a class="nav-link menu" href="http://onesteptrip.dothome.co.kr/allcontent.php"> Continents </a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="wrap">
+        <!--bxSlider-->
+        <div class="slide">
+            <div>
+                <p class="country-name-in-slide"> 프 랑 스 </p>
+                <img class="slide-img" src="../img/countries/French/french1.jpg" alt="사진1">
+            </div>
+            <div>
+                <p class="country-name-in-slide"> 프 랑 스 </p>
+                <img class="slide-img" src="../img/countries/French/french2.jpg" alt="사진2">
+            </div>
+            <div>
+                <p class="country-name-in-slide"> 프 랑 스 </p>
+                <img class="slide-img" src="../img/countries/French/french3.jpg" alt="사진3">
+            </div>
+        </div>
+        <!--나라 소개-->
+		 <div class="information_div" id="firstdiv">
+            <div id="content1" class="firstinfo_content" >
+                <h3 id="welcome"> Welcome To France! </h3>
+                <p id="infocountry">
+                    프랑스는 유럽 서부 대서양 연안에 위치한 공화제 국가로 유럽에서 3번째로 큰 나리이고 수도는 파리입니다.<br>
+					면적은 64만 3801㎢로 한반도의 2.5배이고 유럽연합(EU)의 5분의 1의 넓이입니다.<br>
+					아름다운 도시 프랑스를 방문하신다면 좋은 추억을 만들 수 있을 겁니다!
+                </p>
+            </div>
+            
+        </div>
+
+        <div class="information_div">
+            <div id="content1" class="information_content">
+                <h3> 에펠탑 </h3>
+                <p id="details">
+                    에펠 탑은 파리는 물론 프랑스를 상징하는 건축물이다. <br>
+                    프랑스 혁명 100주년인 1889년에 세운 높이 320.75m의 탑으로,
+                    탑의 이름은 이 탑을 세운 프랑스 건축가인 에펠(Alexandre Gustave
+                    Eiffel 1832∼1923)의 이름에서 유래한다. 이 탑은 격자 구조로 이루어져 파리에서
+                    가장 높은 건축물이며, 매년 수백만 명이 방문할 만큼 세계적인 유료 관람지이다. 프랑스의 랜드마크로, 관광객들의
+                    필수 코스 중 하나이다.
+                </p>
+            </div>
+            <div id="content2" class="information_image">
+                <img src="../img/countries/French/french4.jpg" class="information_img">
+            </div>
+        </div>
+
+        <!--관광지 소개-->
+        <div class="information_div">
+            <div id="content2" class="information_image">
+                <img src="../img/countries/French/french5.PNG" class="information_img">
+            </div>
+            <div class="information_content">
+                <h3>샹보르 성 Le Chateau de Chambord</h3>
+                <p id="details">
+                    프랑스인이 가장 많이 방문한 여행지 중 첫 번째는 바로 프랑스 왕조의
+                    역사를 느낄 수 있는 발 드 루아르 지역의 대표 고성인 샹보르 성입니다.
+                    샹보르 성은 방 440개, 벽난로 282개 등 발 드 루아르에서도 규모와 크기로 손꼽히는
+                    곳이기도 하며, 정확한 대칭구조를 가지고 있기로 유명합니다.
+                    샹보르 성에서 빠질 수 없는 요소 중
+                    하나는 레오나르도 다빈치가 설계한 나선형 계단이고, 중세 시대 요새를 떠오르게 하는
+                    탑과 화려한 장식은 신비스러운 분위기를 퓽겨냅니다.
+                </p>
+            </div>
+        </div>
+
+        <!--관광지 소개-->
+        <div class="information_div">
+            <div class="information_content">
+                <h3>몽 생 미셀 Mont Saint-Michel</h3>
+                <p id="details">
+                    서양의 불가사의라 불리는 섬 위에 세워진 수도원, 몽 생 미셸에 많은 프랑스인들이 방문합니다.<br>
+                    13세기 전, 아브란슈의 주교였던 생 오베르는 거대한 만 위에 있는 섬 위로 수도원을 지으라는 게시를 받고 지었고,
+                    시간이 흘러가며 수도원, 교회가 증축되었습니다. 백년 전쟁 중에는 수도원 아래에 있는
+                    마을에 성벽이 둘러지며 현재의 모습을 띄게 되었습니다.<br>
+                    몽 셀 미셀과 만은 그 아름다움을 인정받아 유네스코 문화유산에 등재되었으며, 프랑스 역사 유적지로 지정되었습니다.
+                </p>
+            </div>
+
+            <div id="content2" class="information_image">
+                <img src="../img/countries/French/french6.PNG" class="information_img">
+            </div>
+        </div>
+        <!--지도-->
+        <div id="map" class="information_div">
+        </div>
+    </div>
+
+    <footer>
+        <p>One step: programmer 류채현 programmer 이상은 programmer 임성제</p>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            var showed = new Array();
+            var details = $(".information_div");
+            var locations = new Array();
+            details.each(function (index, item) {
+                showed.push(false);
+                locations.push($(details[index]).offset().top);
+                $(details).css({ opacity: "0" });
+            });
+
+            makeVisible();
+            $(window).on('scroll', makeVisible);
+
+            function makeVisible() {
+                for (var i = 0; i < details.length; i++) {
+                    if (checkVisible(details, i) && !showed[i]) {
+                        showed[i] = true;
+                        $(details[i]).animate({ opacity: 1 }, 700);
+                    }
+                }
+            }
+
+            function checkVisible(details, i) {
+                var windowH = $(window).innerHeight(),
+                    scrolltop = $(window).scrollTop(),
+                    y = locations[i],
+                    detH = $(details[i]).height;
+                return (y <= (windowH + scrolltop) || y + detH >= scrolltop);
+            }
+        });
+    </script>
+</body>
+</html>

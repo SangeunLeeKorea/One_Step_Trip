@@ -1,0 +1,86 @@
+.show_search_result {
+	
+}
+
+.result_title {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: gray;
+    padding-left: 5vh;
+    padding-right: 5vh;
+    font-family: 경기천년제목_L;
+}
+
+.result_content {
+    margin-top: 2vh;
+    color: #87B1AC;
+    font-family: 고양일산_R;
+}
+
+.no_result {
+    margin-top: 2vh;
+    color: #87B1AC;
+    font-family: 고양일산_R;
+}
+
+.result_content:hover {
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.result_page_title {
+    margin-top: 5vh;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    font-weight: bold;
+    font-size: 1.2em;
+    font-family: 경기천년제목V_Bold;
+}
+
+.result_list {
+	list-style: none;
+	border-top: solid 1px lightgray;
+	margin-left: 3vh;
+	margin-right: 3vh;
+}
+
+#country_search {
+	padding: 10px;
+	text-align: center;
+	background-color: #B8CBC9;
+}
+
+#country_search_input {
+	width: 50%;
+	height: 40px;
+	border: solid 1px lightgray;
+	border-radius: 5px;
+	outline-color: gray;
+	vertical-align: middle;
+}
+
+#country_search_button {
+	text-decoration: none;
+}
+
+#country_search_button_img {
+	height: 40px;
+	border: solid 1px gray;
+	border-radius: 5px;
+	padding: 3px;
+}
+
+@font-face {
+    font-family: "고양일산_R";
+    src: url('../fonts/Goyang_R.TTF');
+}
+
+@font-face {
+    font-family: "경기천년제목_L";
+    src: url('../fonts/Gyeonggi_L.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "경기천년제목V_Bold";
+    src: url('../fonts/GyeonggiV_Bold.ttf') format('truetype');
+}

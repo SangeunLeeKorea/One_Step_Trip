@@ -1,0 +1,53 @@
+﻿#country_search {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: #B8CBC9;
+}
+
+#country_search_input {
+    width: 50%;
+    height: 40px;
+    border: solid 1px lightgray;
+    border-radius: 5px;
+    outline-color: gray;
+    vertical-align: middle;
+}
+
+#country_search_button {
+    text-decoration: none;
+}
+
+#country_search_button_img {
+    height: 40px;
+    border: solid 1px gray;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+#canvas{
+}
+
+body{
+    text-align: center;
+}
+
+#tag {
+    font-family: 경기천년제목_L;
+    font-size: x-large;
+    margin: 40px;
+    text-transform: uppercase;
+}
+
+#details {
+    font-family: 경기천년제목_L;
+    margin: 40px;
+    line-height: 170%;
+	height: 8vh;
+}
+
+@font-face {
+    font-family: "경기천년제목_L";
+    src: url('../fonts/Gyeonggi_L.ttf') format('truetype');
+    font-style: italic;
+}

@@ -1,0 +1,87 @@
+﻿/* continent page style sheet */
+#main_content {
+	width: 80%;
+	margin: auto;
+}
+#country_search {
+	padding: 10px;
+	text-align: center;
+	background-color: #B8CBC9;
+}
+#country_search_input {
+	width: 50%;
+	height: 40px;
+	border: solid 1px lightgray;
+	border-radius: 5px;
+	outline-color: gray;
+	vertical-align: middle;
+}
+#country_search_button {
+	text-decoration: none;
+}
+#country_search_button_img {
+	height: 40px;
+	border: solid 1px gray;
+	border-radius: 5px;
+	padding: 3px;
+}
+#content {
+	display: flex;
+	float: left;
+	margin-top: 20px;
+	width: 100%;
+}
+#continent {
+	margin-left: 5vh;
+	width: 45%;
+}
+#country-list {
+	width: 55%;
+	margin-top: 5vh;
+	text-align: center;
+}
+#continent-canvas {
+	width: 100%;
+	border: solid 2px lightgray;
+	border-radius: 5px;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.country {
+	text-decoration: none;
+	color: #86A6A2;
+	font-size: 20px;
+}
+
+.country:hover {
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 20px;
+	color: #365050;
+}
+.country-title {
+	font-weight: bold;
+	font-size: 40px;
+	color: #87B1AC;
+	text-align: center;
+    font-family: tvn즐거운이야기;
+}
+.continent-name {
+	color: #0F3530;
+}
+.country-ol{
+	list-style: none;
+	line-height: 30px;
+	text-align: center;
+    font-family: 경기천년바탕;
+}
+
+@font-face{
+    font-family: "tvn즐거운이야기";
+    src: url(../fonts/tvN_B.ttf) format('truetype');
+}
+
+@font-face{
+    font-family: "경기천년바탕";
+    src:.url(../fonts/GyeonggiBatang_B.ttf) format('truetype');
+}

@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="icon" type="images/png" href="../icon/bicon.png" />
+    <title>One Step</title>
+    <link href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/titlebar.css">
+    <link rel="stylesheet" type="text/css" href="../css/country_css.css">
+
+    <script src="../script/jquery-3.5.1.js"></script>
+    <script src="../script/jquery.bxslider.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7E5d-TK5DZ4yeObXLfwNv2-hvATE10H0&callback=initMap"></script>
+
+
+    <!--지도 표시하기-->
+    <script type="text/javascript">
+        function initMap() {
+            var locations = [
+
+                ['자유의 여신상', 40.689452759411125, -74.044564775103],
+                ['그랜드 캐니언', 36.13373691388117, -112.03237796573246],
+                ['디즈니 랜드', 33.81227897952174, -117.91842703166188],
+                ['옐로스톤 국립공원', 44.42943357252122, -110.5881113629703],
+                ['요세미티 국립공원', 37.88017519947517, -119.52103391052027]
+             ];
+
+
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 5,
+                center: new google.maps.LatLng(39.84152274130262, -101.66539788372589),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+
+            });
+
+            var infowindow = new google.maps.InfoWindow();
+            var marker, i;
+            for (i = 0; i < locations.length; i++) {
+                marker = new google.maps.Marker({
+                    id: i,
+                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                    map: map
+
+                });
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent(locations[i][0]);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+                if (marker) {
+                    marker.addListener('click', function () {
+                        map.setZoom(13);
+                        map.setCenter(this.getPosition());
+                    });
+                }
+            }
+        }
+    </script>
+
+    <style>
+    </style>
+    <script>
+        $(function () {
+            $('.slide').bxSlider({
+                auto: true,
+                autoHover: true,
+                autoControls: false,
+                autoMover: true,
+                pager: false,
+                mode: 'fade',
+                slideWidth: 1600,
+                pause: 3000
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+        <a class="navbar-brand title-logo" id="title" href="http://onesteptrip.dothome.co.kr">
+            <img src="../icon/logo.png" width="96" height="30" alt="" loading="lazy">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link menu" href="http://onesteptrip.dothome.co.kr"> Home </a>
+                <a class="nav-link menu" href="http://onesteptrip.dothome.co.kr/introduction.html"> Introduce </a>
+                <a class="nav-link menu" href="http://onesteptrip.dothome.co.kr/allcontent.php"> Continents </a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="wrap">
+        <!--bxSlider-->
+        <div class="slide">
+            <div>
+                <p class="country-name-in-slide"> 미 국 </p>
+                <img class="slide-img" src="../img/countries/usa/usa6.jpg" alt="사진1">
+            </div>
+            <div>
+                <p class="country-name-in-slide"> 미 국 </p>
+                <img class="slide-img" src="../img/countries/usa/usa5.jpg" alt="사진2">
+            </div>
+            <div>
+                <p class="country-name-in-slide"> 미 국 </p>
+                <img class="slide-img" src="../img/countries/usa/usa4.jpg" alt="사진3">
+            </div>
+        </div>
+        <!--나라 소개-->
+		 <div class="information_div" id="firstdiv">
+            <div id="content1" class="firstinfo_content" >
+                <h3 id="welcome"> Welcome To United States of America! </h3>
+                <p id="infocountry">
+                   미국은 동부, 남부, 중서부, 서부로 나눠지며, 숲이 우거진 뉴잉글랜드 지방, 모래먼지가 자욱한 네바다 사막,
+				   상하의 나라 플로리다, 얼음으로 감싸인 알래스카등 변화무쌍한 땅이 한 나라로 통일되어 있는 거대한 나라입니다.<br>
+				   미국은 넓은 지역을 가지고 있어 기후가 매우 다양하게 나타나고 있지만 대체로 온대기후에 속합니다.
+				   수많은 민족이 함께 살고 있는 미국에서 다양한 문화와 언어를 경험해보세요!
+                </p>
+            </div>
+            
+        </div>
+
+        <div class="information_div">
+            <div id="content1" class="information_content">
+                <h3>  자유의 여신상 (Statue of Liberty) </h3>
+                <p id="details">
+						뉴욕을 대표하는 건축물로, 프랑스가 미국의 독립 100주년을 축하하기 위해 제작한 동상이다.<br>
+						이는 미국의 자유와 민주주의의 상징을 가지며, 1984년 유네스코 세계문화유산에 등록되기도 하였다. 
+						본래는 등대였기 때문에, 뉴욕항을 향해 있지만, 현재는 등대로 사용되지 않는다. 
+						머리부분은 현재 전망대로 이용되고 있으며, 시간당 30명, 하루 240명으로 
+						이용 인원이 제한되어있다.
+                </p>
+            </div>
+            <div id="content2" class="information_image">
+                <img src="../img/countries/usa/usa1.jpg" class="information_img">
+            </div>
+        </div>
+
+        <!--관광지 소개-->
+        <div class="information_div">
+            <div id="content2" class="information_image">
+                <img src="../img/countries/usa/usa2.jpg" class="information_img">
+            </div>
+            <div class="information_content">
+                <h3>그랜드 캐니언 (Grand Canyon)</h3>
+                <p id="details">
+                  미국 애리조나주 북부에 위치하고 있으며, 고원재대를 흐르는 콜로라도 강에 의해 깎인 거대한 계곡이다.<br>
+				  깎인 계곡의 깊이는 1,600m에 이르고, 폭은 넓은 곳이 30km에 이른다. 1919년에 국립공원으로 지정되었으며,
+				  이어 1979년에는 유네스코 세계유산으로 지정되었다.  
+				  현재 미국의 서부 지역에 있는 국립공원 중 가장 높은 숫자의 관광자 수를 기록했다.
+                </p>
+            </div>
+        </div>
+
+        <!--관광지 소개-->
+        <div class="information_div">
+            <div class="information_content">
+                <h3>디즈니 랜드</h3>
+                <p id="details">
+                  미국 캘리포니아주에 위치한 테마파크로, 월트 디즈니 컴퍼니의 자회사인 
+				  월트디즈니 파크 앤 리조트에 의해 운영되고있다.<br>
+				  '메인스트리트, U.S.A'와 어드벤처랜드, 프론티어랜드, 판타지 랜드, 투머로우 랜드 등 
+				  여러개의 구역으로 나누어져 운영되고 있으며, 놀이기구 뿐만 아니라 기차, 공연 등의 요소들이 
+				  많이 위치하고있다.
+                </p>
+            </div>
+
+            <div id="content2" class="information_image">
+                <img src="../img/countries/usa/usa3.jpg" class="information_img">
+            </div>
+        </div>
+        <!--지도-->
+        <div id="map" class="information_div">
+        </div>
+    </div>
+
+    <footer>
+        <p>One step: programmer 류채현 programmer 이상은 programmer 임성제</p>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            $(".information_div").ready(function () {
+                var showed = new Array();
+                var details = $(".information_div");
+                var locations = new Array();
+                details.each(function (index, item) {
+                    showed.push(false);
+                    locations.push($(details[index]).offset().top);
+                    $(details).css({ opacity: "0" });
+                });
+
+                makeVisible();
+                $(window).on('scroll', makeVisible);
+
+                function makeVisible() {
+                    for (var i = 0; i < details.length; i++) {
+                        if (checkVisible(details, i) && !showed[i]) {
+                            showed[i] = true;
+                            $(details[i]).animate({ opacity: 1 }, 700);
+                        }
+                    }
+                }
+
+                function checkVisible(details, i) {
+                    var windowH = $(window).innerHeight(),
+                        scrolltop = $(window).scrollTop(),
+                        y = locations[i],
+                        detH = $(details[i]).height;
+                    return (y <= (windowH + scrolltop) || y + detH >= scrolltop);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

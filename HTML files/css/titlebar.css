@@ -1,0 +1,52 @@
+﻿#navbar {
+    height: 9vh;
+    background-color: #51827C;
+    width: 100%;
+}
+
+.fixed-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+#title {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 10px;
+    font-size: 20px;
+    color: white;
+}
+
+.title-logo {
+    font-weight: bold;
+    margin-right: 50px;
+    margin-left: 20px;
+    font-family: "경기천년제목V_Bold";
+}
+
+.menu {
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: "경기천년제목_L";
+	font-size: 17px;
+}
+
+.menu:hover{
+    color: #c8c8c8;
+	cursor: pointer;
+}
+
+@font-face {
+    font-family: "경기천년제목V_Bold";
+    src: url('../fonts/GyeonggiV_Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "경기천년제목_L";
+    src: url('../fonts/Gyeonggi_L.ttf') format('truetype');
+}
